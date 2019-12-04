@@ -12,23 +12,10 @@ import java.util.Map;
 
 @Controller
 public class PagesController {
-	@Autowired
-	ProductoRepository productoRepository;
-
-	@RequestMapping("/")
-	public String home(Model model) {
-		model.addAttribute("message", "Hola Mundo !!");
-		for (Producto p: productoRepository.findAll() ) {
-			System.out.println(p.nombre);
-		}
-		model.addAttribute("productos", productoRepository.findAll());
-		return "index";
-	}
 	
-	@RequestMapping("/next")
-	public String next(Map<String, Object> model) {
-		model.put("message", "Vas muy bien !!!");
-		return "next";
+@RequestMapping(blog-detail)
+	public String blog-detail(Model model) {
+		model.addAttribute("contenido", contenidoRepository.findAll());
+		return "blog-detail";
 	}
-
 }
