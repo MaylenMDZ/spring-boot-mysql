@@ -12,9 +12,10 @@ import java.util.Map;
 
 @Controller
 public class PagesController {
-	@RequestMapping("/product")
-	public String product(Model model) {
-		model.addAttribute("contenido", contenidoRepository.findAll());
-		return "product";
+@RequestMapping("/")
+	public String home(Model model) {
+//		model.addAttribute("contenido", contenidoRepository.findAll());
+		return "index";
+	}
 
 }
