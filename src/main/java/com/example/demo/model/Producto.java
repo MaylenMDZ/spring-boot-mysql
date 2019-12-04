@@ -1,31 +1,14 @@
 package com.example.demo.model;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import org.hibernate.validator.constraints.Length;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import java.io.Serializable;
-import java.util.Date;
 
-/**
- * Created by Armando on 28/07/18.
- */
+
 @Entity
 @Table(name = "productos")
-//@NamedStoredProcedureQueries({
-//    @NamedStoredProcedureQuery(
-//            name = "spProductoSearch", procedureName = "spproductosearch", resultClasses = Producto.class
-//            , parameters = { @StoredProcedureParameter(mode = ParameterMode.IN, name = "arg", type = String.class) }
-//    )
-//})
 @EntityListeners(AuditingEntityListener.class)
-@JsonIgnoreProperties(value = {"createdAt", "updatedAt"}, allowGetters = true)
 public class Producto {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
@@ -34,29 +17,20 @@ public class Producto {
     public String nombre;
 
     @NotBlank
-    @Length(min = 8, max = 10)
+    public Double precio;
+    
+    @NotBlank
     public String descripcion;
-
-    // @Column(nullable = false, updatable = true)
-    @Column(updatable = true)
-    @Temporal(TemporalType.TIMESTAMP)
-    @CreatedDate
-    public Date createdAt;
-/*
-    public Producto(){
-
-    }
-    public Producto(long id, String nombre, String descripcion, Date fecha){
-        this.id = id;
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.createdAt = fecha;
-    }
-*/
-    // @Column(nullable = false)
-    // @Temporal(TemporalType.TIMESTAMP)
-    // @LastModifiedDate
-    // private Date updatedAt;
+    
+    @NotBlank
+    public String foto1;
+    
+    @NotBlank
+    public String foto2;
+    
+    @NotBlank
+    public String foto3;
+    
 
     public Long getId() {
         return id;
@@ -74,6 +48,14 @@ public class Producto {
         this.nombre = nombre;
     }
 
+    public Double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(Double precio) {
+        this.precio = precio;
+    }
+
     public String getDescripcion() {
         return descripcion;
     }
@@ -82,12 +64,28 @@ public class Producto {
         this.descripcion = descripcion;
     }
 
-    public Date getCreatedAt() {
-        return createdAt;
+    public String getFoto1() {
+        return foto1;
     }
 
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
+    public void setFoto1(String foto1) {
+        this.foto1 = foto1;
+    }
+
+    public String getFoto2() {
+        return foto2;
+    }
+
+    public void setFoto2(String foto2) {
+        this.foto2 = foto2;
+    }
+
+    public String getFoto3() {
+        return foto3;
+    }
+
+    public void setFoto3(String foto3) {
+        this.foto3 = foto3;
     }
 
 }
