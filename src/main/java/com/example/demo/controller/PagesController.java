@@ -12,6 +12,9 @@ import java.util.Map;
 
 @Controller
 public class PagesController {
-
-
+@RequestMapping("blog-detail")
+	public String blog_detail(Model model) {
+		model.addAttribute("contenido", contenidoRepository.findAll());
+		return "blog-detail";
+	}
 }
