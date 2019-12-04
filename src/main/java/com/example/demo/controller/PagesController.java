@@ -15,6 +15,11 @@ import java.util.Map;
 public class PagesController {
     @Autowired
     ContenidoRepository contenidoRepository; 
+    @RequestMapping("/")
+	public String home(Model model) {
+		model.addAttribute("contenido", contenidoRepository.findAll());
+		return "index";
+	}
 
 
 }
