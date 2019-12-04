@@ -474,8 +474,7 @@
 				</div>
 			</div>
 
-			<div class="row isotope-grid">
-<div class="row isotope-grid">
+	<div class="row isotope-grid">
                             <c:forEach var="producto" items="${productos}">
                                                       
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
@@ -510,7 +509,6 @@
                                                             
                             </c:forEach>
                             
-			</div>
 			</div>
 
 			<!-- Load more -->
