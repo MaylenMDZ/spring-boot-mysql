@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.model.Pedido;
 import com.example.demo.model.Producto;
 import com.example.demo.model.Reseñas;
+import com.example.demo.repository.AgregarPedidoRepository;
 import com.example.demo.repository.ContenidoRepository;
 import com.example.demo.repository.ProductoRepository;
 import com.example.demo.repository.ReseñasRepository;
@@ -14,6 +15,8 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.Map;
+import javax.validation.Valid;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -27,6 +30,8 @@ public class PagesController {
     ProductoRepository productoRepository;
     @Autowired
     ReseñasRepository reseñasRepository;
+    @Autowired
+    AgregarPedidoRepository agregarPedidoRepository;
 
     @RequestMapping("/")
 	public String home(Model model) {
@@ -79,6 +84,22 @@ public class PagesController {
             model.put("contenido", contenidoRepository.findAll());
             return "product-detail";
 	}
+         @RequestMapping(value="/agregarPedido", method=RequestMethod.POST)
+        public String agregarPedido(@Valid Pedido pedidos,
+            BindingResult bindingResult, ModelMap model){
+            if(bindingResult.hasErrors()){
+                System.out.println("Error--->>"+bindingResult.getFieldErrors() );
+                model.addAttribute("productos", productoRepository.findByName(""));
+		model.addAttribute("contenido", contenidoRepository.findAll());
+                return "/index";
+            }else{
+                agregarPedidoRepository.save(pedidos);
+                model.addAttribute("productos", productoRepository.findByName(""));
+		model.addAttribute("contenido", contenidoRepository.findAll());
+                return "index";
+            }
+        }
+        
 
    }
         
