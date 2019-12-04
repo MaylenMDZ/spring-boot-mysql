@@ -12,10 +12,5 @@ import java.util.Map;
 
 @Controller
 public class PagesController {
-@RequestMapping("/")
-	public String home(Model model) {
-//		model.addAttribute("contenido", contenidoRepository.findAll());
-		return "index";
-	}
 
 }
