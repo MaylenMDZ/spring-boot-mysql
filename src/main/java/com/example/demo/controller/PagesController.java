@@ -12,17 +12,5 @@ import java.util.Map;
 
 @Controller
 public class PagesController {
-    @Autowired
-    //ContenidoRepository contenidoRepository;
 
-	@RequestMapping("about")
-	public String about(Model model) {
-		//model.addAttribute("contenido", contenidoRepository.findAll());
-		return "about";
-	}
-        @RequestMapping("product-detail")
-	public String product_detail(Model model) {
-		//model.addAttribute("contenido", contenidoRepository.findAll());
-		return "product-detail";
-        }
 }
