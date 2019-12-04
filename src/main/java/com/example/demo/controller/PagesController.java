@@ -40,4 +40,9 @@ public class PagesController {
 		return "product";
 	}
 
-}
+	@RequestMapping("contact")
+	public String contact(Model model) {
+		model.addAttribute("contenido", contenidoRepository.findAll());
+		return "contact";
+
+   }
