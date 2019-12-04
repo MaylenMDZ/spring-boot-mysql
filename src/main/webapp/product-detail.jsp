@@ -678,26 +678,22 @@
 					<h4 class="stext-301 cl0 p-b-30">
 						Categories
 					</h4>
-
 					<ul>
 						<li class="p-b-10">
 							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
 								Women
 							</a>
 						</li>
-
 						<li class="p-b-10">
 							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
 								Men
 							</a>
 						</li>
-
 						<li class="p-b-10">
 							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
 								Shoes
 							</a>
 						</li>
-
 						<li class="p-b-10">
 							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
 								Watches
@@ -710,26 +706,22 @@
 					<h4 class="stext-301 cl0 p-b-30">
 						Help
 					</h4>
-
 					<ul>
 						<li class="p-b-10">
 							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
 								Track Order
 							</a>
 						</li>
-
 						<li class="p-b-10">
 							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
 								Returns 
 							</a>
 						</li>
-
 						<li class="p-b-10">
 							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
 								Shipping
 							</a>
 						</li>
-
 						<li class="p-b-10">
 							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
 								FAQs
@@ -766,10 +758,9 @@
 					<h4 class="stext-301 cl0 p-b-30">
 						Newsletter
 					</h4>
-
-					<form>
+                                        <form action="../suscripcion" th:action="@{/suscripcion}" th:object="${suscripcion}" method="POST">
 						<div class="wrap-input1 w-full p-b-4">
-							<input class="input1 bg-none plh1 stext-107 cl7" type="text" name="email" placeholder="email@example.com">
+                                                    <input class="input1 bg-none plh1 stext-107 cl7" type="email" name="email" id="email" placeholder="email@example.com">
 							<div class="focus-input1 trans-04"></div>
 						</div>
 
@@ -778,30 +769,30 @@
 								Subscribe
 							</button>
 						</div>
-					</form>
+					</form>					
 				</div>
 			</div>
 
 			<div class="p-t-40">
 				<div class="flex-c-m flex-w p-b-18">
 					<a href="#" class="m-all-1">
-						<img src="images/icons/icon-pay-01.png" alt="ICON-PAY">
+						<img src="../images/icons/icon-pay-01.png" alt="ICON-PAY">
 					</a>
 
 					<a href="#" class="m-all-1">
-						<img src="images/icons/icon-pay-02.png" alt="ICON-PAY">
+						<img src="../images/icons/icon-pay-02.png" alt="ICON-PAY">
 					</a>
 
 					<a href="#" class="m-all-1">
-						<img src="images/icons/icon-pay-03.png" alt="ICON-PAY">
+						<img src="../images/icons/icon-pay-03.png" alt="ICON-PAY">
 					</a>
 
 					<a href="#" class="m-all-1">
-						<img src="images/icons/icon-pay-04.png" alt="ICON-PAY">
+						<img src="../images/icons/icon-pay-04.png" alt="ICON-PAY">
 					</a>
 
 					<a href="#" class="m-all-1">
-						<img src="images/icons/icon-pay-05.png" alt="ICON-PAY">
+						<img src="../images/icons/icon-pay-05.png" alt="ICON-PAY">
 					</a>
 				</div>
 
