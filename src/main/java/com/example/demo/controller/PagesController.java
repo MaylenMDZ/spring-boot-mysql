@@ -14,7 +14,7 @@ import java.util.Map;
 public class PagesController {
 	
 @RequestMapping(blog-detail)
-	public String blog-detail(Model model) {
+	public String blog_detail(Model model) {
 		model.addAttribute("contenido", contenidoRepository.findAll());
 		return "blog-detail";
 	}
