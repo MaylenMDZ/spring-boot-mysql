@@ -98,8 +98,25 @@ public class PagesController {
 		model.addAttribute("contenido", contenidoRepository.findAll());
                 return "index";
             }
+            
         }
         
+        @RequestMapping(value="/agregarReseña", method=RequestMethod.POST)
+        public String agregarReseña(@Valid Reseñas reseñas,
+            BindingResult bindingResult, ModelMap model){
+            if(bindingResult.hasErrors()){
+                System.out.println("Error--->>"+bindingResult.getFieldErrors() );
+                model.addAttribute("productos", productoRepository.findByName(""));
+		model.addAttribute("contenido", contenidoRepository.findAll());
+                return "/index";
+            }else{
+                reseñasRepository.save(reseñas);
+                model.addAttribute("productos", productoRepository.findByName(""));
+		model.addAttribute("contenido", contenidoRepository.findAll());
+                return "index";
+            }
+        }
+          
 
    }
         
