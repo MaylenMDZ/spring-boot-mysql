@@ -13,11 +13,25 @@ import java.util.Map;
 
 @Controller
 public class PagesController {
-    
+    @Autowired
+    ContenidoRepository contenidoRepository;
+
     @RequestMapping("/")
 	public String home(Model model) {
 		model.addAttribute("contenido", contenidoRepository.findAll());
 		return "index";
+	}
+
+	@RequestMapping("product-detail")
+	public String ProductDetail(Model model) {
+		model.addAttribute("contenido", contenidoRepository.findAll());
+		return "product-detail";
+	}
+
+	@RequestMapping("about")
+	public String about(Model model) {
+		model.addAttribute("contenido", contenidoRepository.findAll());
+		return "about";
 	}
 
 }
