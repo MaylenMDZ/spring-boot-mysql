@@ -51,5 +51,5 @@ public class PagesController {
 	public String blog_detail(Model model) {
 		model.addAttribute("contenido", contenidoRepository.findAll());
 		return "blog-detail";
-
+        }
    }
