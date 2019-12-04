@@ -39,5 +39,29 @@ public class PagesController {
 		model.addAttribute("contenido", contenidoRepository.findAll());
 		return "product";
 	}
+        
 
-}
+	@RequestMapping("contact")
+	public String contact(Model model) {
+		model.addAttribute("contenido", contenidoRepository.findAll());
+		return "contact";
+
+   }
+
+   	@RequestMapping("blog-detail")
+	public String blog_detail(Model model) {
+		model.addAttribute("contenido", contenidoRepository.findAll());
+		return "blog-detail";
+
+
+   }
+   	@RequestMapping("shoping-cart")
+	public String shoping_cart(Model model) {
+		model.addAttribute("contenido", contenidoRepository.findAll());
+		return "shoping-cart";
+
+
+        }
+
+   }
+        
