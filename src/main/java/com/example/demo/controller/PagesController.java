@@ -34,4 +34,10 @@ public class PagesController {
 		return "about";
 	}
 
+	@RequestMapping("product")
+	public String product(Model model) {
+		model.addAttribute("contenido", contenidoRepository.findAll());
+		return "product";
+	}
+
 }
