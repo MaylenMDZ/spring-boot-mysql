@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.model.Producto;
 import com.example.demo.repository.ContenidoRepository;
 import com.example.demo.repository.ProductoRepository;
+import com.example.demo.repository.tipoproductosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,10 +16,13 @@ import java.util.Map;
 public class PagesController {
     @Autowired
     ContenidoRepository contenidoRepository;
+    @Autowired
+    tipoproductosRepository tipoproductosRepository;
 
     @RequestMapping("/")
 	public String home(Model model) {
 		model.addAttribute("contenido", contenidoRepository.findAll());
+                model.addAttribute("tipoproductos", tipoproductosRepository.findAll());
 		return "index";
 	}
 
