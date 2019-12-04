@@ -12,6 +12,7 @@ import java.util.Map;
 
 @Controller
 public class PagesController {
+<<<<<<< HEAD
 	
 
 @RequestMapping(contact)
@@ -20,4 +21,11 @@ public class PagesController {
 		return "contact";
 	
 	}
+=======
+	@RequestMapping("/product")
+	public String product(Model model) {
+		model.addAttribute("contenido", contenidoRepository.findAll());
+		return "product";
+
+>>>>>>> 8ec0e5b0f4d3a4a6b26689d052ed642435804d77
 }
