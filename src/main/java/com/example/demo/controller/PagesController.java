@@ -46,3 +46,10 @@ public class PagesController {
 		return "contact";
 
    }
+
+   	@RequestMapping("blog-detail")
+	public String blog_detail(Model model) {
+		model.addAttribute("contenido", contenidoRepository.findAll());
+		return "blog-detail";
+
+   }
