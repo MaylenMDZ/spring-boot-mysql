@@ -12,7 +12,7 @@ import java.util.Map;
 
 @Controller
 public class PagesController {
-	@RequestMapping("/shoping-cart")
+	@RequestMapping("shoping-cart")
 	public String shoping_cart(Model model) {
 		model.addAttribute("contenido", contenidoRepository.findAll());
 		return "shoping-cart";
