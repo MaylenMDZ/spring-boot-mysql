@@ -52,10 +52,14 @@ public class PagesController {
 		model.addAttribute("contenido", contenidoRepository.findAll());
 		return "blog-detail";
 
+
    }
    	@RequestMapping("shoping-cart")
 	public String shoping_cart(Model model) {
 		model.addAttribute("contenido", contenidoRepository.findAll());
 		return "shoping-cart";
+
+
+        }
 
    }
