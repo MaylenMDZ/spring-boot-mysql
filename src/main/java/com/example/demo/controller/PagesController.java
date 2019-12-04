@@ -35,6 +35,7 @@ public class PagesController {
 
     @RequestMapping("/")
 	public String home(Model model) {
+                model.addAttribute("productos", productoRepository.findByName(""));
 		model.addAttribute("contenido", contenidoRepository.findAll());
                 model.addAttribute("tipoproductos", tipoproductosRepository.findAll());
 		return "index";
