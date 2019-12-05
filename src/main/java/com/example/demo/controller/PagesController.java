@@ -67,6 +67,7 @@ public class PagesController {
    	@RequestMapping("blog-detail")
 	public String blog_detail(Model model) {
 		model.addAttribute("contenido", contenidoRepository.findAll());
+		model.addAttribute("tipoproductos", tipoproductosRepository.findAll());
 		return "blog-detail";
 
 
