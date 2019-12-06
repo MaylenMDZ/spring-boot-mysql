@@ -13,10 +13,12 @@
 
 
 -- Volcando estructura de base de datos para demo
+DROP DATABASE IF EXISTS `demo`;
 CREATE DATABASE IF NOT EXISTS `demo` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
 USE `demo`;
 
 -- Volcando estructura para tabla demo.contenido
+DROP TABLE IF EXISTS `contenido`;
 CREATE TABLE IF NOT EXISTS `contenido` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `nombre_contenido` varchar(100) NOT NULL,
@@ -37,6 +39,7 @@ INSERT INTO `contenido` (`id`, `nombre_contenido`, `imagen`, `url`) VALUES
 /*!40000 ALTER TABLE `contenido` ENABLE KEYS */;
 
 -- Volcando estructura para tabla demo.mensajes
+DROP TABLE IF EXISTS `mensajes`;
 CREATE TABLE IF NOT EXISTS `mensajes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` text NOT NULL,
@@ -49,6 +52,7 @@ CREATE TABLE IF NOT EXISTS `mensajes` (
 /*!40000 ALTER TABLE `mensajes` ENABLE KEYS */;
 
 -- Volcando estructura para tabla demo.pedidosproducto
+DROP TABLE IF EXISTS `pedidosproducto`;
 CREATE TABLE IF NOT EXISTS `pedidosproducto` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(50) DEFAULT NULL,
@@ -67,11 +71,12 @@ INSERT INTO `pedidosproducto` (`id`, `nombre`, `precio`, `cantidad`, `total`, `f
 /*!40000 ALTER TABLE `pedidosproducto` ENABLE KEYS */;
 
 -- Volcando estructura para tabla demo.productos
+DROP TABLE IF EXISTS `productos`;
 CREATE TABLE IF NOT EXISTS `productos` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(50) NOT NULL,
   `precio` double NOT NULL DEFAULT 0,
-  `descripcion` text NOT NULL DEFAULT '0',
+  `descripcion` text NOT NULL ,
   `foto1` text NOT NULL,
   `foto2` text NOT NULL,
   `foto3` text NOT NULL,
@@ -86,6 +91,7 @@ INSERT INTO `productos` (`id`, `nombre`, `precio`, `descripcion`, `foto1`, `foto
 /*!40000 ALTER TABLE `productos` ENABLE KEYS */;
 
 -- Volcando estructura para tabla demo.reseñas
+DROP TABLE IF EXISTS `reseñas`;
 CREATE TABLE IF NOT EXISTS `reseñas` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(50) NOT NULL,
@@ -104,6 +110,7 @@ INSERT INTO `reseñas` (`id`, `nombre`, `email`, `reseña`, `foto`, `id_producto
 /*!40000 ALTER TABLE `reseñas` ENABLE KEYS */;
 
 -- Volcando estructura para tabla demo.suscripciones
+DROP TABLE IF EXISTS `suscripciones`;
 CREATE TABLE IF NOT EXISTS `suscripciones` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `Email` varchar(255) DEFAULT NULL,
